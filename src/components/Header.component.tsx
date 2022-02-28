@@ -34,13 +34,13 @@ const Header: React.FC = () => {
   };
 
   return (
-    <div className="fixed left-0 top-0 w-full py-1.5 shadow-md dark:shadow-neutral-800 dark:bg-slate-900">
+    <div className="fixed left-0 top-0 w-full py-1.5 bg-indigo-50 shadow-md dark:shadow-neutral-800 dark:bg-slate-900">
       <div className="container mx-auto flex items-center">
         <img src={logo} alt="logo-frontend" className="w-16" />
         {isDark ? (
           <MoonIcon
             onClick={setModeVisible}
-            className="cursor-pointer hover:text-indigo-500 h-8 w-8 text-indigo-50 ml-auto"
+            className="cursor-pointer hover:text-indigo-500 h-8 w-8 text-indigo-100 ml-auto"
           />
         ) : (
           <SunIcon
