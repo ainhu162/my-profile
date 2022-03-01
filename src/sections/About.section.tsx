@@ -19,6 +19,11 @@ const About: React.FC = () => {
           Icon={BookmarkIcon}
         />
         <Intro
+          name="Companies"
+          description="4 companies worked"
+          Icon={TranslateIcon}
+        />
+        <Intro
           name="Language"
           description="English: Intermediate"
           Icon={TranslateIcon}
