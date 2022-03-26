@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { SunIcon, MoonIcon } from "@heroicons/react/outline";
-import logo from "./../assets/logo.svg";
+import React, { useEffect, useState } from 'react';
+import { SunIcon, MoonIcon } from '@heroicons/react/outline';
+import logo from './../assets/logo.svg';
 
-const LIGHT = "light";
-const DARK = "dark";
+const LIGHT = 'light';
+const DARK = 'dark';
 const Header: React.FC = () => {
   const [isDark, setIsDark] = useState<boolean>(localStorage.theme === DARK);
 
@@ -13,17 +13,16 @@ const Header: React.FC = () => {
 
   const setModeVisible = (): void => {
     const isDarkMode = localStorage.theme === DARK;
-    addClassDarkMode(!isDarkMode);
-    localStorage.theme = isDarkMode ? LIGHT : DARK;
-
-    setIsDark(!isDarkMode);
+    addClassDarkMode(!isDarkMode); // add class
+    localStorage.theme = isDarkMode ? LIGHT : DARK; // store theme
+    setIsDark(!isDarkMode); // set state
   };
 
   const addClassDarkMode = (isDarkMode: boolean): boolean => {
     if (
       isDarkMode ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
       document.documentElement.classList.add(DARK);
     } else {
@@ -34,7 +33,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <div className="fixed left-0 top-0 w-full py-1.5 bg-indigo-50 shadow-md dark:shadow-neutral-800 dark:bg-slate-900">
+    <div className="fixed z-10 left-0 top-0 w-full py-1.5 bg-indigo-50 shadow-md dark:shadow-neutral-900 dark:bg-slate-900">
       <div className="container mx-auto flex items-center">
         <img src={logo} alt="logo-frontend" className="w-16" />
         {isDark ? (

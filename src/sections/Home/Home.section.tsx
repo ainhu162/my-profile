@@ -1,8 +1,7 @@
-import React, { useLayoutEffect } from "react";
-import Greeting from "../../components/Greeting.component";
-import "./style.css";
-import CV from "./../../assets/logo.svg";
-import avt from "./../../assets/avt.jpg";
+import React from 'react';
+import Greeting from '../../components/Greeting.component';
+import CV from './../../assets/cv_tuainhu.pdf';
+import avt from './../../assets/avt.jpg';
 
 const Home: React.FC = () => {
   return (
@@ -19,8 +18,8 @@ const Home: React.FC = () => {
         <div
           style={{
             backgroundImage: `url(${avt})`,
-            backgroundSize: "contain",
-            backgroundPosition: "center",
+            backgroundSize: 'contain',
+            backgroundPosition: 'center',
           }}
           className="rounded-full border-2 border-indigo-500 w-48 h-48 shadow shadow-indigo-500 mx-auto mt-6"
         ></div>

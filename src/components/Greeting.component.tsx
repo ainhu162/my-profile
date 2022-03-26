@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { texts } from "../constants/data";
+import React, { useEffect } from 'react';
+import { texts } from '../constants/data';
 
 const Greeting: React.FC = () => {
   let i = 0;
@@ -11,8 +11,8 @@ const Greeting: React.FC = () => {
 
   const typeWriter = () => {
     const item = texts[nextText];
-    const { id, txt } = item;
     if (!item) return;
+    const { id, txt } = item;
     if (i < txt.length) {
       document.getElementById(id)!.innerHTML += txt.charAt(i);
       i++;
