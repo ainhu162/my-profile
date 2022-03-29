@@ -9,7 +9,7 @@ import {
 import React from "react";
 import Intro from "../components/Intro.component";
 import Title from "../components/Title.component";
-import avt from "./../assets/avt.jpg";
+import avt from "./../assets/avt2.jpg";
 const About: React.FC = () => {
   return (
     <div>
