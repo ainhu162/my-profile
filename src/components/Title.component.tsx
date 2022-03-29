@@ -7,9 +7,9 @@ type Props = {
 
 const Title: React.FC<Props> = ({ title, subTitle }: Props) => {
   return (
-    <div className="text-center mt-20 pb-14">
-      <p className="text-slate-900 dark:text-indigo-200">{title}</p>
-      <p className="text-slate-900 dark:text-indigo-100 text-4xl font-semibold">
+    <div className="text-center mt-20 sm:pb-10 lg:pb-14">
+      <p className="text-violet-400 dark:text-indigo-200">{title}</p>
+      <p className="text-violet-700 dark:text-indigo-100 sm:text-2xl md:text-4xl font-semibold">
         {subTitle}
       </p>
     </div>

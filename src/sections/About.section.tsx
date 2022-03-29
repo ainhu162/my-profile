@@ -5,16 +5,16 @@ import {
   PhoneIcon,
   TranslateIcon,
   UserCircleIcon,
-} from '@heroicons/react/outline';
-import React from 'react';
-import Intro from '../components/Intro.component';
-import Title from '../components/Title.component';
-import avt from './../assets/avt.jpg';
+} from "@heroicons/react/outline";
+import React from "react";
+import Intro from "../components/Intro.component";
+import Title from "../components/Title.component";
+import avt from "./../assets/avt.jpg";
 const About: React.FC = () => {
   return (
     <div>
       <Title title="My intro" subTitle="About Me" />
-      <div className="flex items-center justify-center gap-x-5">
+      <div className="sm:px-3 sm:grid sm:grid-cols-1 md:flex items-center justify-center gap-5">
         <Intro
           name="Experience"
           description="4 Years Working"
@@ -32,7 +32,11 @@ const About: React.FC = () => {
         />
       </div>
       <div className="mt-5 flex items-start justify-center gap-5 container mx-auto">
-        <img src={avt} alt="my-avatar" className="rounded-xl flex-1 w-1/3" />
+        <img
+          src={avt}
+          alt="my-avatar"
+          className="sm:hidden lg:block rounded-xl flex-1 w-1/3"
+        />
         <div className="intro">
           <p className="dark:text-indigo-50 text-slate-900">
             <span className="text-3xl">A</span>s Frontend developer with more

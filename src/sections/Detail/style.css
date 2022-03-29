@@ -48,3 +48,12 @@ ul.experience-list li:nth-child(odd)::after {
 .dark ul.experience-list li:first-child::before {
   border-bottom: 10px solid #fff;
 }
+
+@media screen and (max-width: 400px) {
+	ul.experience-list li:first-child::before {
+		left: 95%;
+	}
+	ul.experience-list li:nth-child(odd)::after {
+		left: 98.4%;
+	  }
+}
