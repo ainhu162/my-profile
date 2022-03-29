@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { texts } from '../constants/data';
+import React, { useEffect } from "react";
+import { texts } from "../constants/data";
 
 const Greeting: React.FC = () => {
   let i = 0;

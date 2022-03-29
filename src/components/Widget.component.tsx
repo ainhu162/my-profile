@@ -27,17 +27,27 @@ const Widget: React.FC = () => {
     >
       <li>
         <a href="https://www.linkedin.com/in/nhutu">
-          <img className="w-8" src={iconLinkedin} title="linkedin" />
+          <img
+            className="w-8"
+            alt="linkedin"
+            src={iconLinkedin}
+            title="linkedin"
+          />
         </a>
       </li>
       <li className="my-3">
         <a href="https://github.com/ainhu162">
-          <img className="w-8" src={iconGithub} title="github" />
+          <img className="w-8" alt="github" src={iconGithub} title="github" />
         </a>
       </li>
       <li>
         <a href="https://leetcode.com/nhutu/">
-          <img className="w-8" src={iconLeetcode} title="leetcode" />
+          <img
+            className="w-8"
+            alt="leetcode"
+            src={iconLeetcode}
+            title="leetcode"
+          />
         </a>
       </li>
     </ul>
