@@ -30,7 +30,7 @@ const Skills: React.FC = () => {
           <ul className="flex justify-center items-center gap-x-5 mt-4">
             <li>
               <img
-                className="sm:w-10 lg:w-14 mx-auto"
+                className="sm:w-8 md:w-10 lg:w-14 mx-auto"
                 src={iconJs}
                 alt="javascript/es6+"
                 title="javascript/es6+"
@@ -38,7 +38,7 @@ const Skills: React.FC = () => {
             </li>
             <li>
               <img
-                className="sm:w-10 lg:w-14 mx-auto"
+                className="sm:w-8 md:w-10 lg:w-14 mx-auto"
                 src={iconTs}
                 alt="typescript"
                 title="typescript"
@@ -51,7 +51,7 @@ const Skills: React.FC = () => {
           <ul className="flex items-center gap-x-5 mx-auto mt-4 justify-center">
             <li>
               <img
-                className="w-14"
+                className="sm:w-8 md:w-10 w-14"
                 src={iconReact}
                 alt="React/React Native"
                 title="React/React Native"
@@ -59,7 +59,7 @@ const Skills: React.FC = () => {
             </li>
             <li>
               <img
-                className="w-14"
+                className="sm:w-8 md:w-10 w-14"
                 src={iconAngular}
                 alt="Angular2+"
                 title="Angular2+"
@@ -67,7 +67,7 @@ const Skills: React.FC = () => {
             </li>
             <li>
               <img
-                className="w-14"
+                className="sm:w-8 md:w-10 w-14"
                 src={iconNext}
                 alt="NextJS"
                 title="NextJS"

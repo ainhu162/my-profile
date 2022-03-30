@@ -19,7 +19,7 @@ ul.experience-list li:first-child::before {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-bottom: 10px solid rgb(96, 5, 133);
-  left: 98.4%;
+  right: -12px;
 }
 
 ul.experience-list li::after {
@@ -34,7 +34,8 @@ ul.experience-list li::after {
   border-radius: 50%;
 }
 ul.experience-list li:nth-child(odd)::after {
-  left: 99.4%;
+  left: auto;
+  right: -7px;
 }
 
 .dark ul.experience-list li:nth-child(odd){
@@ -47,13 +48,4 @@ ul.experience-list li:nth-child(odd)::after {
 
 .dark ul.experience-list li:first-child::before {
   border-bottom: 10px solid #fff;
-}
-
-@media screen and (max-width: 400px) {
-	ul.experience-list li:first-child::before {
-		left: 95%;
-	}
-	ul.experience-list li:nth-child(odd)::after {
-		left: 98.4%;
-	  }
 }
