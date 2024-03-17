@@ -16,12 +16,24 @@ const Experience: React.FC = () => {
           </p>
           <div className="dark:text-stone-500 italic sm:hidden md:block">
             <p className="indent-2">
-              - Maintain source code and Enhance feature
+              - Maintain source code, enhance features, apply some animations of
+              CSS to make a lively website
             </p>
             <p className="indent-2">
-              - Based on Zeplin design to build the applications UI
+              - Work directly with the client to collect requirements
             </p>
-            <p className="indent-2">- Develop the website using Angular 11</p>
+            <p className="indent-2">
+              - Review code and training for other team members
+            </p>
+            <p className="indent-2">
+              - Based on Zeplin’s design to build the application UI
+            </p>
+            <p className="indent-2">
+              - Proactive in finding technical to improve performance when
+              working with large record
+            </p>
+            <p className="indent-2">- Write unit test, automation test</p>
+            <p className="indent-2">- Propose some UX/UI for designe</p>
           </div>
         </li>
         <li className="ml-auto w-1/2 p-3">

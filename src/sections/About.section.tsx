@@ -17,7 +17,7 @@ const About: React.FC = () => {
       <div className="sm:px-3 sm:grid sm:grid-cols-1 md:flex items-center justify-center gap-5">
         <Intro
           name="Experience"
-          description="4 Years Working"
+          description="5 Years Working"
           Icon={BookmarkIcon}
         />
         <Intro
@@ -39,10 +39,13 @@ const About: React.FC = () => {
         />
         <div className="intro">
           <p className="dark:text-indigo-50 text-slate-900">
-            <span className="text-3xl">A</span>s Frontend developer with more
-            than 4 years experience working with HTML5, CSS3, Javascript. I
-            worked framework is ReactJS, Angular 2+, React Native Expo.
-            Expertise in developing UI/UX from design and delivery quality work.
+            <span className="text-3xl">A</span>s an accomplished front-end
+            developer with more than 5 years of experience, I have proficiency
+            in front-end languages HTML, CSS, and JS (ES6+). I actively excel in
+            swiftly adapting to diverse environments and diligently supporting
+            fellow team members while eagerly absorbing new technical knowledge.
+            I thrive when faced with challenging projects, leveraging my
+            problem-solving abilities to achieve optimal results
           </p>
           <p className="dark:text-indigo-50 text-slate-900">
             <span className="text-3xl">I’</span>m keen on learning new technical

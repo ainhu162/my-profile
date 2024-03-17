@@ -1,6 +1,6 @@
 const GREETING = "Hello, My name is";
 const NAME = "Nhu Tu";
-const JOB_TITLE = "Frontend Developer";
+const JOB_TITLE = "Senior Frontend Developer";
 export const texts = {
   0: {
     id: "greeting",
