@@ -1,13 +1,13 @@
 import React, { ReactNode } from "react";
-import Widget from "./components/Widget.component";
+import { AuroraBackground } from "./components/ui/AuroraBackground";
+import { Cursor } from "./components/ui/Cursor";
 
-const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
-  return (
-    <div className="dark:bg-slate-900 pb-5">
-      <Widget />
-      <div className="max-w-screen-lg mx-auto px-4">{children}</div>
-    </div>
-  );
-};
+const Layout: React.FC<{ children: ReactNode }> = ({ children }) => (
+  <div className="relative min-h-screen text-[var(--text)] overflow-x-clip">
+    <AuroraBackground />
+    <Cursor />
+    {children}
+  </div>
+);
 
 export default Layout;
