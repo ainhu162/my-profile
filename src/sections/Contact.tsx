@@ -1,100 +1,68 @@
 import React from "react";
-import {
-  DocumentDownloadIcon,
-  MailIcon,
-  PhoneIcon,
-} from "@heroicons/react/outline";
-import iconGithub from "../assets/icon-github.svg";
-import iconLinkedin from "../assets/icon-linkedin.svg";
-import iconLeetcode from "../assets/icon-leetcode.png";
 import { profile } from "../constants/data";
-import { Section } from "../components/ui/Section";
-import { Reveal } from "../components/ui/Reveal";
-import { MagneticButton } from "../components/ui/MagneticButton";
+import { Section, container } from "../components/ui/Section";
+import { ExternalLink, prettyUrl } from "../components/ui/ExternalLink";
 
-const socials = [
-  { href: profile.linkedin, icon: iconLinkedin, label: "LinkedIn" },
-  { href: profile.github, icon: iconGithub, label: "GitHub" },
-  { href: profile.leetcode, icon: iconLeetcode, label: "LeetCode" },
+const channels = [
+  {
+    label: "Phone",
+    value: (
+      <ExternalLink href={`tel:+84${profile.phone.replace(/\s/g, "").replace(/^0/, "")}`}>
+        {profile.phone}
+      </ExternalLink>
+    ),
+  },
+  { label: "LinkedIn", value: <ExternalLink href={profile.linkedin}>{prettyUrl(profile.linkedin)}</ExternalLink> },
+  { label: "GitHub", value: <ExternalLink href={profile.github}>{prettyUrl(profile.github)}</ExternalLink> },
+  { label: "LeetCode", value: <ExternalLink href={profile.leetcode}>{prettyUrl(profile.leetcode)}</ExternalLink> },
+  {
+    label: "CV",
+    value: (
+      <a href={profile.cv} download className="link">
+        Download PDF
+      </a>
+    ),
+  },
 ];
 
-export const Contact: React.FC = () => {
-  const year = new Date().getFullYear();
-  return (
-    <Section id="contact">
-      <Reveal direction="scale">
-        <div className="relative card overflow-hidden text-center p-10 md:p-16">
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-72 h-72 bg-brand-violet/30 blur-3xl rounded-full pointer-events-none" />
-          <div className="relative">
-            <span className="chip mx-auto">
-              <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              <span className="text-[var(--muted)]">Let's connect</span>
-            </span>
-            <h2 className="font-display text-3xl md:text-5xl font-extrabold mt-5 tracking-tight">
-              Let's build something <span className="text-grad">great</span>
-              <br className="hidden sm:block" /> together.
-            </h2>
-            <p className="mt-4 text-[var(--muted)] max-w-xl mx-auto">
-              I'm open to senior frontend roles and interesting collaborations.
-              The fastest way to reach me is a quick email.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-3 justify-center">
-              <MagneticButton href={`mailto:${profile.email}`} variant="grad">
-                <MailIcon className="w-5 h-5" />
-                Email me
-              </MagneticButton>
-              <MagneticButton href={profile.cv} download variant="ghost">
-                <DocumentDownloadIcon className="w-5 h-5" />
-                Download CV
-              </MagneticButton>
-            </div>
-
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm">
-              <a
-                href={`mailto:${profile.email}`}
-                className="flex items-center gap-2 text-[var(--muted)] hover:text-[var(--text)] transition-colors"
-              >
-                <MailIcon className="w-4 h-4 text-brand-violet" />
-                {profile.email}
-              </a>
-              <a
-                href={`tel:${profile.phone.replace(/\s/g, "")}`}
-                className="flex items-center gap-2 text-[var(--muted)] hover:text-[var(--text)] transition-colors"
-              >
-                <PhoneIcon className="w-4 h-4 text-brand-cyan" />
-                {profile.phone}
-              </a>
-            </div>
-
-            <div className="mt-7 flex justify-center gap-3">
-              {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={s.label}
-                  className="group grid place-items-center w-11 h-11 rounded-full glass hover:-translate-y-1 hover:border-brand-violet/60 transition-all duration-300"
-                >
-                  <img
-                    src={s.icon}
-                    alt={s.label}
-                    className="w-5 h-5 opacity-75 group-hover:opacity-100 transition-opacity"
-                  />
-                </a>
-              ))}
-            </div>
-          </div>
+export const Contact: React.FC = () => (
+  <>
+    <Section id="contact" tone="band">
+      <div className="grid gap-12 md:grid-cols-[1fr_300px] md:gap-16">
+        <div data-reveal>
+          <p className="balance max-w-[30ch] font-serif text-[26px] leading-snug md:text-[34px]">
+            I'm open to {profile.lookingFor.toLowerCase()}. Email is the quickest
+            way to reach me.
+          </p>
+          <p className="mt-6 font-serif text-[22px] md:text-[28px]">
+            <ExternalLink href={`mailto:${profile.email}`} className="break-all">
+              {profile.email}
+            </ExternalLink>
+          </p>
         </div>
-      </Reveal>
 
-      <footer className="mt-12 text-center text-sm text-[var(--muted)]">
-        <p>
-          © {year} {profile.name}. Designed &amp; built with React, TypeScript
-          &amp; Tailwind CSS.
-        </p>
-      </footer>
+        <dl
+          data-reveal
+          style={{ "--d": "120ms" } as React.CSSProperties}
+          className="self-start border-t border-rule text-[15px]"
+        >
+          {channels.map((c) => (
+            <div key={c.label} className="border-b border-rule py-3">
+              <dt className="label">{c.label}</dt>
+              <dd className="mt-0.5">{c.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
     </Section>
-  );
-};
+
+    <footer className={`${container} label flex justify-between py-8`}>
+      <span>
+        © {new Date().getFullYear()} {profile.name}
+      </span>
+      <a href="#top" className="transition-colors hover:text-ink">
+        Back to top <span className="nudge nudge-up">↑</span>
+      </a>
+    </footer>
+  </>
+);

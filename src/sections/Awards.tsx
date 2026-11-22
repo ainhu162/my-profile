@@ -1,34 +1,33 @@
 import React from "react";
-import { BadgeCheckIcon } from "@heroicons/react/outline";
-import { awards } from "../constants/data";
+import { awards, education } from "../constants/data";
 import { Section } from "../components/ui/Section";
-import { SectionHeading } from "../components/ui/SectionHeading";
-import { Reveal } from "../components/ui/Reveal";
 
 export const Awards: React.FC = () => (
   <Section id="awards">
-    <SectionHeading eyebrow="Recognition" title="Honors & awards" />
-
-    <div className="mt-14 grid sm:grid-cols-2 gap-5">
-      {awards.map((award, i) => (
-        <Reveal
-          key={award.title}
-          delay={(i % 2) * 70}
-          direction={i % 2 === 0 ? "left" : "right"}
-        >
-          <div className="card card-hover p-5 flex items-center gap-4">
-            <span className="grid place-items-center w-12 h-12 rounded-2xl bg-grad-brand text-white shrink-0 shadow-glow">
-              <BadgeCheckIcon className="w-6 h-6" />
-            </span>
-            <div>
-              <div className="text-xs font-mono text-brand-cyan">
-                {award.year}
-              </div>
-              <div className="font-medium leading-snug">{award.title}</div>
-            </div>
+    <div className="grid gap-12 md:grid-cols-2 md:gap-14">
+      <div data-reveal>
+        {education.map((e) => (
+          <div key={e.school}>
+            <p className="label">{e.period}</p>
+            <h3 className="mt-1 font-serif text-[24px] font-normal leading-snug">{e.school}</h3>
+            <p className="mt-1 text-muted">
+              {e.major} · {e.detail}
+            </p>
           </div>
-        </Reveal>
-      ))}
+        ))}
+      </div>
+
+      <div data-reveal style={{ "--d": "120ms" } as React.CSSProperties}>
+        <h3 className="label">Awards</h3>
+        <ul className="mt-3 divide-y divide-rule border-y border-rule">
+          {awards.map((a) => (
+            <li key={a.title} className="grid grid-cols-[88px_1fr] gap-4 py-3">
+              <span className="label pt-[3px]">{a.year}</span>
+              <span>{a.title}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </Section>
 );

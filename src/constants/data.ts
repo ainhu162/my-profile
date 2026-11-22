@@ -1,38 +1,14 @@
-import iconReact from "../assets/icon-react.svg";
-import iconAngular from "../assets/icon-angular.svg";
-import iconJs from "../assets/icon-js.svg";
-import iconCss from "../assets/icon-css.svg";
-import iconTs from "../assets/icon-ts.svg";
-import iconSass from "../assets/icon-sass.svg";
-import iconTw from "../assets/icon-tailwindcss.svg";
-import iconMUI from "../assets/icon-mui.svg";
-import iconSc from "../assets/icon-sc.svg";
-import iconRedux from "../assets/icon-redux.svg";
-import iconNode from "../assets/icon-nodejs.svg";
-import iconRxjs from "../assets/icon-rxjs.svg";
-import iconNgrx from "../assets/icon-ngrx.svg";
 import CV from "../assets/cv_tuainhu.pdf";
 
 export const profile = {
-  greeting: "Hello, I'm",
   name: "Tu Ai Nhu",
-  shortName: "Nhu",
   title: "Senior Frontend / Fullstack Developer",
-  // Rotating phrases for the hero typewriter
-  taglines: [
-    "I craft delightful, fast web interfaces.",
-    "I ship full-stack features with React & Node.js.",
-    "I turn designs into pixel-perfect UI.",
-    "I automate with Telegram bots & Chrome extensions.",
-  ],
   summary:
-    "Accomplished developer with 8+ years of experience and deep proficiency in HTML, CSS and modern JavaScript (ES6+) — plus back-end development with Node.js. I adapt quickly to new environments, support my teammates and absorb new tech eagerly, and I thrive on challenging projects where strong problem-solving leads to optimal, high-performance results.",
-  goals: [
-    "Pursue a career that fosters continuous learning and growth.",
-    "Contribute my skills to a dynamic organization and drive its success.",
-  ],
+    "I'm a frontend-focused fullstack developer with 8+ years of experience building web applications with React, Angular and TypeScript, plus back-end services in Node.js. I currently lead the Vietnam team on TecAlliance's TecDoc Catalogue while building the MevX trading platform. Most of my best work has been performance on large datasets, code review and testing, and working directly with clients from the Netherlands, Singapore and the US.",
+  lookingFor: "Senior frontend and fullstack roles",
+  languages: "English (professional working), Vietnamese (native)",
   cv: CV,
-  location: "Ho Chi Minh, Vietnam",
+  location: "Ho Chi Minh City, Vietnam",
   email: "tuainhu160296@gmail.com",
   phone: "0906 772 584",
   linkedin: "https://www.linkedin.com/in/nhutu/",
@@ -40,92 +16,62 @@ export const profile = {
   leetcode: "https://leetcode.com/nhutu/",
 };
 
+/** Page sections in order: anchor id → running number and title. */
+export const sections = {
+  about: { index: "01", title: "About" },
+  experience: { index: "02", title: "Experience" },
+  projects: { index: "03", title: "Projects" },
+  skills: { index: "04", title: "Skills" },
+  awards: { index: "05", title: "Education" },
+  contact: { index: "06", title: "Contact" },
+} as const;
+
+export type SectionId = keyof typeof sections;
+
 export const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
-  { label: "Awards", href: "#awards" },
+  { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
 
-export const stats = [
-  { value: 8, suffix: "+", label: "Years of experience" },
-  { value: 6, suffix: "", label: "Companies worked" },
-  { value: 7, suffix: "+", label: "Projects delivered" },
-  { value: 680, suffix: "", label: "TOEIC score" },
-];
-
-export type SkillItem = { name: string; icon?: string };
-export type SkillGroup = { title: string; accent: string; items: SkillItem[] };
+export type SkillGroup = { title: string; items: string[] };
 
 export const skillGroups: SkillGroup[] = [
   {
     title: "Languages",
-    accent: "from-amber-400 to-yellow-500",
+    items: ["JavaScript (ES6+)", "TypeScript", "Node.js", "HTML5", "CSS3"],
+  },
+  {
+    title: "Frameworks & libraries",
+    items: ["React", "React Native", "Angular 2+", "Express.js", "RxJS", "NgRx"],
+  },
+  {
+    title: "State & styling",
     items: [
-      { name: "JavaScript / ES6+", icon: iconJs },
-      { name: "TypeScript", icon: iconTs },
-      { name: "Node.js", icon: iconNode },
-      { name: "HTML5" },
-      { name: "CSS3", icon: iconCss },
+      "Redux",
+      "Redux Toolkit",
+      "Styled Components",
+      "Tailwind CSS",
+      "Sass / SCSS",
+      "Material UI",
+      "Ant Design",
     ],
   },
   {
-    title: "Frameworks & Libraries",
-    accent: "from-cyan-400 to-sky-500",
+    title: "Testing & tooling",
     items: [
-      { name: "React / React Native", icon: iconReact },
-      { name: "Angular 2+", icon: iconAngular },
-      { name: "Express.js" },
-      { name: "RxJS", icon: iconRxjs },
-      { name: "NgRx", icon: iconNgrx },
+      "Jest",
+      "Jasmine",
+      "Selenium",
+      "React Testing Library",
+      "Git",
+      "Webpack",
+      "Telegram Bot API",
+      "Chrome Extension API",
     ],
   },
-  {
-    title: "State & Styling",
-    accent: "from-fuchsia-400 to-violet-500",
-    items: [
-      { name: "Redux", icon: iconRedux },
-      { name: "Redux Toolkit", icon: iconRedux },
-      { name: "Styled Components", icon: iconSc },
-      { name: "Tailwind CSS", icon: iconTw },
-      { name: "Sass / SCSS", icon: iconSass },
-      { name: "Material UI", icon: iconMUI },
-      { name: "Ant Design" },
-    ],
-  },
-  {
-    title: "Testing & Tooling",
-    accent: "from-violet-400 to-purple-500",
-    items: [
-      { name: "Jest" },
-      { name: "Jasmine" },
-      { name: "Selenium" },
-      { name: "React Testing Library" },
-      { name: "Git" },
-      { name: "Webpack" },
-      { name: "Telegram Bot API" },
-      { name: "Chrome Extension API" },
-    ],
-  },
-];
-
-// Flat list used for the marquee tech strip (icon-bearing tech only)
-export const techStrip: SkillItem[] = [
-  { name: "JavaScript", icon: iconJs },
-  { name: "TypeScript", icon: iconTs },
-  { name: "Node.js", icon: iconNode },
-  { name: "React", icon: iconReact },
-  { name: "Angular", icon: iconAngular },
-  { name: "Redux", icon: iconRedux },
-  { name: "RxJS", icon: iconRxjs },
-  { name: "NgRx", icon: iconNgrx },
-  { name: "Tailwind CSS", icon: iconTw },
-  { name: "Sass", icon: iconSass },
-  { name: "Styled Components", icon: iconSc },
-  { name: "Material UI", icon: iconMUI },
-  { name: "CSS3", icon: iconCss },
 ];
 
 export const otherSkills = [
@@ -142,12 +88,13 @@ export type Experience = {
   role: string;
   period: string;
   project: string;
-  projectDesc: string;
+  /** Client and team size, shown next to the project name. */
   meta?: string;
+  projectDesc: string;
   website?: string;
   tech: string[];
+  /** Results first, then responsibilities. Kept in sync with the PDF CV. */
   highlights: string[];
-  achievements: string[];
 };
 
 export const experiences: Experience[] = [
@@ -157,24 +104,14 @@ export const experiences: Experience[] = [
     period: "May 2024 — Present",
     project: "MevX Platform",
     projectDesc:
-      "I build and optimize the product UI together with Node.js services, a Telegram bot and a Chrome extension for the platform.",
+      "Trading platform with a web app, Node.js services, a Telegram bot and a Chrome extension.",
     website: "https://mevx.io/",
-    tech: [
-      "ReactJS",
-      "TypeScript",
-      "Node.js",
-      "REST",
-      "Telegram Bot API",
-      "Chrome Extension API",
-    ],
+    tech: ["React", "TypeScript", "Node.js", "Telegram Bot API", "Chrome Extension API"],
     highlights: [
-      "Build and optimize the application UI with a focus on performance.",
-      "Build the Node.js services behind the platform's Telegram bot (t.me/MevxTradingBot) and RESTful APIs.",
-      "Develop a Chrome extension for the project.",
-    ],
-    achievements: [
       "Improved page-load speed of the trading interface by 50–60%.",
       "Made buy/sell transaction requests 50% faster by adding caching and asynchronous processing.",
+      "Built the Node.js services behind the platform's Telegram bot (t.me/MevxTradingBot) and RESTful APIs.",
+      "Developed the platform's Chrome extension.",
     ],
   },
   {
@@ -182,9 +119,9 @@ export const experiences: Experience[] = [
     role: "Team Lead — Vietnam (Angular)",
     period: "May 2024 — Present",
     project: "TecDoc Catalogue",
+    meta: "Client: Germany",
     projectDesc:
-      "TecAlliance's automotive spare-parts catalogue, used by workshops, distributors and manufacturers to find the right part — 9.8M+ articles from 1,000+ brands across 190,000+ vehicle types in 40+ languages.",
-    meta: "Client: Germany · Vietnam team of 3 devs + 1 QA",
+      "Automotive spare-parts catalogue for workshops, distributors and manufacturers — 9.8M+ articles, 1,000+ brands, 190,000+ vehicle types, 40+ languages.",
     website:
       "https://shop.tecalliance.net/root/products/tecdoc/tecdoc-catalogue/5637170079.c",
     tech: ["Angular", "TypeScript", "RxJS"],
@@ -193,39 +130,21 @@ export const experiences: Experience[] = [
       "Review the team's code against the project's conventions to keep quality consistent.",
       "Implement new features across the web application and management tools in Angular.",
     ],
-    achievements: [],
   },
   {
     company: "Idea Logic",
     role: "Senior Frontend Developer",
     period: "Apr 2021 — May 2024",
     project: "PublishOne",
+    meta: "Client: Netherlands · Team of 11",
     projectDesc:
-      "An editorial solution that lets publishers and knowledge institutions create, manage and distribute documents.",
-    meta: "Client: Dutch · Team of 11",
-    tech: [
-      "TypeScript",
-      "Angular 17",
-      "RxJS",
-      "NgRx",
-      "SCSS",
-      "Material UI",
-      "Jasmine",
-      "Selenium",
-      "OIDC",
-      "REST",
-    ],
+      "Editorial platform for publishers and knowledge institutions to create, manage and distribute documents.",
+    tech: ["Angular 17", "TypeScript", "RxJS", "NgRx", "Jasmine", "Selenium"],
     highlights: [
-      "Maintain & enhance the source code and add CSS animations for a lively UI.",
-      "Work directly with clients to gather requirements and propose UX/UI.",
-      "Review team code and build the UI from Zeplin designs.",
-      "Proactively improve performance on very large datasets.",
-      "Write unit & automation tests.",
-    ],
-    achievements: [
       "Made bulk actions (e.g. select all) in folders of ~10,000 files respond near-instantly instead of lagging, by handling heavy operations asynchronously.",
       "Wrote a custom drag-and-drop on top of the library's virtual scroll, which could not support both (lag, items dropped in the wrong position); list reordering became smooth and the client was very pleased.",
-      "Deepened expertise in unit & automation testing.",
+      "Worked directly with the client to gather requirements, and proposed UX/UI improvements to designers.",
+      "Wrote unit tests (Jasmine) and automation tests (Selenium).",
     ],
   },
   {
@@ -233,71 +152,38 @@ export const experiences: Experience[] = [
     role: "Frontend Developer",
     period: "Jun 2020 — Apr 2021",
     project: "Cosmos",
-    projectDesc:
-      "An admin site to manage charge points that service electric-vehicle charging.",
     meta: "Client: Singapore · Team of 8",
-    tech: [
-      "JavaScript",
-      "React Hooks",
-      "Context",
-      "Redux",
-      "Formik",
-      "SCSS",
-      "CSS Modules",
-      "Tailwind CSS",
-      "Auth0",
-      "React Testing Library",
-      "REST",
-    ],
+    projectDesc: "Admin site to manage charge points for electric-vehicle charging.",
+    tech: ["React", "Redux", "Formik", "Tailwind CSS", "React Testing Library"],
     highlights: [
-      "Implemented the website UI with unit testing.",
-      "Reviewed code, supported members and ran daily standups with clients.",
-      "Gathered requirements with the SP team and built UI from Figma designs.",
-      "Proposed UX/UI improvements for the designer.",
+      "Built the charge-point admin UI from Figma designs and ran daily stand-ups with the client.",
     ],
-    achievements: [],
   },
   {
     company: "KMS Technology",
     role: "Software Engineer",
     period: "Jan 2019 — May 2020",
     project: "Resicap · ERT PM Tool",
+    meta: "Resicap: US client, team of 30",
     projectDesc:
-      "Resicap — an admin site for managing clients' rental properties; and ERT PM Tool — an internal employee-management tool built on a front-end micro-service architecture.",
-    meta: "Client: US · Team of 30",
-    tech: [
-      "JavaScript",
-      "TypeScript",
-      "React",
-      "Angular 6",
-      "Redux",
-      "Redux Thunk",
-      "HOC",
-      "FE Micro-service",
-      "Ant Design",
-      "REST",
-    ],
+      "Resicap is an admin site for managing clients' rental properties; ERT PM Tool is an internal employee-management tool on a front-end micro-service architecture.",
+    tech: ["React", "Redux", "Angular 6", "TypeScript", "Ant Design"],
     highlights: [
-      "Gathered requirements, maintained the property-management system and improved web performance.",
-      "Built UI from mockups and reviewed team code.",
-      "Developed with ReactJS and Angular 6 over a front-end micro-service architecture.",
+      "Resicap: maintained the property-management system and improved its web performance.",
+      "ERT PM Tool: developed features in React and Angular 6 within the front-end micro-service architecture.",
     ],
-    achievements: [],
   },
   {
-    company: "VNG Corp",
+    company: "VNG Corporation",
     role: "Frontend Developer",
     period: "Aug 2017 — May 2018",
-    project: "Game Portals & Tools",
-    projectDesc:
-      "News pages, interactive campaigns and internal tools for VNG's games.",
-    tech: ["HTML5", "CSS3", "jQuery", "Bootstrap", "PHP", "MySQL"],
+    project: "Game portals",
+    projectDesc: "Game portals and internal tools for VNG's games.",
+    tech: ["HTML5", "CSS3", "jQuery", "PHP", "MySQL"],
     highlights: [
-      "Converted PSD designs to HTML5, CSS3 and jQuery and built news pages for VNG's games.",
-      "Maintained and developed banner & article management tools.",
-      "Created interactive pages for voting, sharing and social login.",
+      "Converted PSD designs into news and campaign pages (voting, sharing, social login) for VNG's games.",
+      "Maintained banner and article management tools (PHP / MySQL).",
     ],
-    achievements: ["Gained SEO knowledge and basic PHP / MySQL backend skills."],
   },
 ];
 
@@ -307,7 +193,6 @@ export type Project = {
   features: string[];
   platform: string;
   tech: string[];
-  accent: string;
   link?: { label: string; href: string };
 };
 
@@ -331,7 +216,6 @@ export const projects: Project[] = [
       "AdMob",
       "Codemagic",
     ],
-    accent: "from-emerald-500 to-teal-500",
     link: {
       label: "View on Codester",
       href: "https://www.codester.com/items/73249/pdf-document-scanner-for-android-and-ios",
@@ -357,7 +241,6 @@ export const projects: Project[] = [
       "SwiftData",
       "ZXing",
     ],
-    accent: "from-amber-500 to-orange-500",
     link: {
       label: "View on Codester",
       href: "https://www.codester.com/items/72813/safe-qr-and-barcode-scanner-android-and-ios",
@@ -382,7 +265,6 @@ export const projects: Project[] = [
       "MongoDB",
       "Redis",
     ],
-    accent: "from-violet-500 to-fuchsia-500",
   },
   {
     name: "Learn English With AI",
@@ -405,7 +287,6 @@ export const projects: Project[] = [
       "Sequelize",
       "MySQL",
     ],
-    accent: "from-cyan-500 to-sky-500",
   },
 ];
 

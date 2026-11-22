@@ -4,10 +4,10 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#05060f" />
+    <meta name="theme-color" content="#f5f3ee" />
     <meta
       name="description"
-      content="Tu Ai Nhu — Senior Frontend / Fullstack Developer with 8+ years building fast, polished web apps with React, Angular, Node.js & TypeScript."
+      content="Tu Ai Nhu — Senior Frontend / Fullstack Developer in Ho Chi Minh City. 8+ years with React, Angular, TypeScript and Node.js."
     />
     <meta
       property="og:title"
@@ -15,14 +15,14 @@
     />
     <meta
       property="og:description"
-      content="8+ years building fast, polished web apps with React, Angular, Node.js & TypeScript."
+      content="8+ years with React, Angular, TypeScript and Node.js. Currently at TecAlliance and MevX."
     />
     <meta property="og:type" content="website" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
       rel="stylesheet"
     />
     <!--
@@ -41,13 +41,13 @@
     -->
     <title>Tu Ai Nhu — Senior Frontend / Fullstack Developer</title>
     <script>
-      // Apply theme before paint to avoid a flash (dark-first).
+      // Apply theme before paint to avoid a flash (light unless the OS prefers dark).
       (function () {
         try {
           var t = localStorage.getItem("theme");
           var dark = t
             ? t === "dark"
-            : !window.matchMedia("(prefers-color-scheme: light)").matches;
+            : window.matchMedia("(prefers-color-scheme: dark)").matches;
           if (dark) document.documentElement.classList.add("dark");
         } catch (e) {}
       })();

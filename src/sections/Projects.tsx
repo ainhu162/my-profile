@@ -1,71 +1,49 @@
 import React from "react";
-import { ExternalLinkIcon } from "@heroicons/react/outline";
 import { projects } from "../constants/data";
 import { Section } from "../components/ui/Section";
-import { SectionHeading } from "../components/ui/SectionHeading";
-import { Reveal } from "../components/ui/Reveal";
-import { TiltCard } from "../components/ui/TiltCard";
+import { ExternalLink } from "../components/ui/ExternalLink";
 
 export const Projects: React.FC = () => (
   <Section id="projects">
-    <SectionHeading
-      eyebrow="Things I've built"
-      title="Personal projects"
-      subtitle="Native mobile apps sold on Codester, plus web side projects where I explore new ideas, tools and AI."
-    />
+    <p data-reveal className="max-w-[62ch] text-muted">
+      Native mobile apps whose source code I sell on Codester, plus web side
+      projects where I try out new ideas and tools.
+    </p>
 
-    <div className="mt-14 grid md:grid-cols-2 gap-6">
-      {projects.map((project, i) => (
-        <Reveal key={project.name} delay={(i % 2) * 90} className="h-full">
-          <TiltCard className="p-0 overflow-hidden h-full" max={6}>
-            <div className={`h-1.5 w-full bg-gradient-to-r ${project.accent}`} />
-            <div className="p-6 flex flex-col h-full">
-              <div className="flex items-start justify-between gap-3">
-                <h3 className="font-display text-xl font-bold">
-                  {project.name}
-                </h3>
-                <span className="chip text-xs whitespace-nowrap">
-                  {project.platform}
-                </span>
-              </div>
-              <p className="mt-3 text-sm text-[var(--muted)] leading-relaxed">
-                {project.blurb}
-              </p>
-              {project.link && (
-                <a
-                  href={project.link.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-2 inline-flex items-center gap-1 self-start text-xs text-brand-cyan hover:underline"
-                >
-                  <ExternalLinkIcon className="w-3.5 h-3.5" />
-                  {project.link.label}
-                </a>
-              )}
-              <ul className="mt-4 space-y-1.5">
-                {project.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-sm">
-                    <span
-                      className={`mt-1.5 h-1.5 w-1.5 rounded-full bg-gradient-to-r ${project.accent} shrink-0`}
-                    />
-                    <span className="text-[var(--muted)]">{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-auto pt-5 flex flex-wrap gap-2">
-                {project.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[var(--muted)]"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </TiltCard>
-        </Reveal>
+    <ol className="mt-10 grid gap-x-14 md:grid-cols-2">
+      {projects.map((p, i) => (
+        <li
+          key={p.name}
+          data-reveal
+          style={{ "--d": `${(i % 2) * 100}ms` } as React.CSSProperties}
+          className="group flex flex-col border-t border-rule pb-8 pt-6"
+        >
+          <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <h3 className="font-serif text-[24px] font-normal leading-snug transition-colors duration-300 group-hover:text-accent">
+              {p.name}
+            </h3>
+            <span className="label">{p.platform}</span>
+          </div>
+
+          <p className="mt-2">{p.blurb}</p>
+
+          <ul className="dash-list mt-3 space-y-1.5">
+            {p.features.map((f) => (
+              <li key={f}>{f}</li>
+            ))}
+          </ul>
+
+          <p className="mt-4 text-sm text-muted">{p.tech.join(", ")}</p>
+
+          {p.link && (
+            <p className="mt-3 text-sm">
+              <ExternalLink href={p.link.href}>
+                {p.link.label} <span className="nudge nudge-ne">↗</span>
+              </ExternalLink>
+            </p>
+          )}
+        </li>
       ))}
-    </div>
+    </ol>
   </Section>
 );
