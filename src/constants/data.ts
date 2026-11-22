@@ -51,7 +51,7 @@ export const navLinks = [
 
 export const stats = [
   { value: 8, suffix: "+", label: "Years of experience" },
-  { value: 5, suffix: "", label: "Companies worked" },
+  { value: 6, suffix: "", label: "Companies worked" },
   { value: 7, suffix: "+", label: "Projects delivered" },
   { value: 680, suffix: "", label: "TOEIC score" },
 ];
@@ -173,6 +173,27 @@ export const experiences: Experience[] = [
       "Develop a Chrome extension for the project.",
       "Collaborate with the backend team over RESTful APIs.",
     ],
+    achievements: [
+      "Improved page-load performance of the trading interface.",
+      "Reduced buy/sell transaction latency so users' trades execute faster.",
+    ],
+  },
+  {
+    company: "TecAlliance",
+    role: "Team Lead — Vietnam (Angular)",
+    period: "May 2024 — Present",
+    project: "TecDoc Catalogue",
+    projectDesc:
+      "TecAlliance's automotive spare-parts catalogue, used by workshops, distributors and manufacturers to find the right part — 9.8M+ articles from 1,000+ brands across 190,000+ vehicle types in 40+ languages.",
+    meta: "Client: Germany · Leading the Vietnam team",
+    website:
+      "https://shop.tecalliance.net/root/products/tecdoc/tecdoc-catalogue/5637170079.c",
+    tech: ["Angular", "TypeScript", "RxJS"],
+    highlights: [
+      "Lead the Vietnam development team on the catalogue's Angular front end.",
+      "Review the team's code to keep quality and conventions consistent.",
+      "Implement new catalogue features in Angular.",
+    ],
     achievements: [],
   },
   {
@@ -203,8 +224,9 @@ export const experiences: Experience[] = [
       "Write unit & automation tests.",
     ],
     achievements: [
+      "Improved load speed for folders containing a large number of files.",
       "Solved a conflict between virtual scroll and drag-and-drop.",
-      "Deepened expertise in unit & automation testing and English communication.",
+      "Deepened expertise in unit & automation testing.",
     ],
   },
   {
@@ -287,9 +309,61 @@ export type Project = {
   platform: string;
   tech: string[];
   accent: string;
+  link?: { label: string; href: string };
 };
 
 export const projects: Project[] = [
+  {
+    name: "PDF Document Scanner",
+    blurb:
+      "A native document scanner that creates searchable PDFs with on-device OCR — no account, no server, files stay on the phone. Source code sold on Codester.",
+    features: [
+      "Multi-page scanning with automatic edge detection",
+      "Searchable PDFs with an invisible OCR text layer",
+      "ID-card mode, ZIP backup and six languages",
+    ],
+    platform: "Android / iOS",
+    tech: [
+      "Kotlin Multiplatform",
+      "Jetpack Compose",
+      "SwiftUI",
+      "ML Kit",
+      "VisionKit",
+      "AdMob",
+      "Codemagic",
+    ],
+    accent: "from-emerald-500 to-teal-500",
+    link: {
+      label: "View on Codester",
+      href: "https://www.codester.com/items/73249/pdf-document-scanner-for-android-and-ios",
+    },
+  },
+  {
+    name: "Safe QR & Barcode Scanner",
+    blurb:
+      "A QR and barcode scanner that warns about scam links and checks payment QR codes. Source code sold on Codester.",
+    features: [
+      "Scam-link analysis and EMVCo / VietQR payment-code validation",
+      "Product lookup via Open Food Facts and one-tap Wi-Fi connect",
+      "QR generator, history with CSV export, six languages",
+    ],
+    platform: "Android / iOS",
+    tech: [
+      "Kotlin Multiplatform",
+      "Jetpack Compose",
+      "SwiftUI",
+      "CameraX",
+      "ML Kit",
+      "Room",
+      "SwiftData",
+      "ZXing",
+    ],
+    accent: "from-amber-500 to-orange-500",
+    link: {
+      label: "View on Codester",
+      href: "https://www.codester.com/items/72813/safe-qr-and-barcode-scanner-android-and-ios",
+    },
+  },
   {
     name: "Plan Saving Money",
     blurb:

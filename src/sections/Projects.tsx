@@ -1,4 +1,5 @@
 import React from "react";
+import { ExternalLinkIcon } from "@heroicons/react/outline";
 import { projects } from "../constants/data";
 import { Section } from "../components/ui/Section";
 import { SectionHeading } from "../components/ui/SectionHeading";
@@ -10,7 +11,7 @@ export const Projects: React.FC = () => (
     <SectionHeading
       eyebrow="Things I've built"
       title="Personal projects"
-      subtitle="A few side projects where I explore new ideas, tools and AI."
+      subtitle="Native mobile apps sold on Codester, plus web side projects where I explore new ideas, tools and AI."
     />
 
     <div className="mt-14 grid md:grid-cols-2 gap-6">
@@ -30,6 +31,17 @@ export const Projects: React.FC = () => (
               <p className="mt-3 text-sm text-[var(--muted)] leading-relaxed">
                 {project.blurb}
               </p>
+              {project.link && (
+                <a
+                  href={project.link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-2 inline-flex items-center gap-1 self-start text-xs text-brand-cyan hover:underline"
+                >
+                  <ExternalLinkIcon className="w-3.5 h-3.5" />
+                  {project.link.label}
+                </a>
+              )}
               <ul className="mt-4 space-y-1.5">
                 {project.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm">

@@ -88,7 +88,7 @@ export const Experience: React.FC = () => (
     <SectionHeading
       eyebrow="Where I've worked"
       title="Experience"
-      subtitle="Six years across four companies — from converting PSDs at VNG to leading editorial-platform UI at Idea Logic."
+      subtitle="8+ years — from converting PSDs at VNG to leading a Vietnam team on TecAlliance's TecDoc Catalogue."
     />
 
     <div className="mt-14 relative">
