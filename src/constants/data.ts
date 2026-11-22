@@ -169,13 +169,12 @@ export const experiences: Experience[] = [
     ],
     highlights: [
       "Build and optimize the application UI with a focus on performance.",
-      "Implement a Telegram bot integration for the project.",
+      "Build the Node.js services behind the platform's Telegram bot (t.me/MevxTradingBot) and RESTful APIs.",
       "Develop a Chrome extension for the project.",
-      "Collaborate with the backend team over RESTful APIs.",
     ],
     achievements: [
-      "Improved page-load performance of the trading interface.",
-      "Reduced buy/sell transaction latency so users' trades execute faster.",
+      "Improved page-load speed of the trading interface by 50–60%.",
+      "Made buy/sell transaction requests 50% faster by adding caching and asynchronous processing.",
     ],
   },
   {
@@ -185,14 +184,14 @@ export const experiences: Experience[] = [
     project: "TecDoc Catalogue",
     projectDesc:
       "TecAlliance's automotive spare-parts catalogue, used by workshops, distributors and manufacturers to find the right part — 9.8M+ articles from 1,000+ brands across 190,000+ vehicle types in 40+ languages.",
-    meta: "Client: Germany · Leading the Vietnam team",
+    meta: "Client: Germany · Vietnam team of 3 devs + 1 QA",
     website:
       "https://shop.tecalliance.net/root/products/tecdoc/tecdoc-catalogue/5637170079.c",
     tech: ["Angular", "TypeScript", "RxJS"],
     highlights: [
-      "Lead the Vietnam development team on the catalogue's Angular front end.",
-      "Review the team's code to keep quality and conventions consistent.",
-      "Implement new catalogue features in Angular.",
+      "Lead the Vietnam team (3 developers, 1 QA) that owns the system's entire front end, from the user-facing web application to the catalogue-management tools.",
+      "Review the team's code against the project's conventions to keep quality consistent.",
+      "Implement new features across the web application and management tools in Angular.",
     ],
     achievements: [],
   },
@@ -224,8 +223,8 @@ export const experiences: Experience[] = [
       "Write unit & automation tests.",
     ],
     achievements: [
-      "Improved load speed for folders containing a large number of files.",
-      "Solved a conflict between virtual scroll and drag-and-drop.",
+      "Made bulk actions (e.g. select all) in folders of ~10,000 files respond near-instantly instead of lagging, by handling heavy operations asynchronously.",
+      "Wrote a custom drag-and-drop on top of the library's virtual scroll, which could not support both (lag, items dropped in the wrong position); list reordering became smooth and the client was very pleased.",
       "Deepened expertise in unit & automation testing.",
     ],
   },
